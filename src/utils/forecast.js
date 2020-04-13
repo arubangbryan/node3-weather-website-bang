@@ -9,7 +9,8 @@ const forecast = (lat, long, callback) => {
         }else if (body.message && response.body.cod == 400){
             callback('Unable to find location. Try another longitude and latitude', undefined);
         }else{
-            callback(undefined, 'today is a ' + body.daily[0].weather[0].description + '. And  it is currently ' + body.current.temp + ' degrees out there',
+            callback(undefined, 'today is a ' + body.daily[0].weather[0].description + '. And  it is currently ' + body.current.temp + 
+            ' degrees out there. the sunrise there is ' + body.current.sunrise + ' and the setset there is ' + body.current.sunset
             );
         }
     }); 
